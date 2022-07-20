@@ -1,13 +1,18 @@
 /*
  * @Author: Bryce
  * @Date: 2022-07-19 15:30:06
- * @LastEditTime: 2022-07-19 17:09:35
+ * @LastEditTime: 2022-07-20 17:30:46
  * @LastEditors: Bryce
- * @Description: 
+ * @Description: 程序入口
  */
 import 'package:flutter/material.dart';
 import 'package:new_app/widgets/button_widget.dart';
+import 'package:new_app/widgets/check_widget.dart';
+import 'package:new_app/widgets/click_demo.dart';
+import 'package:new_app/widgets/form_filed_widget.dart';
 import 'package:new_app/widgets/image_widget.dart';
+import 'package:new_app/widgets/linear_progress_widget.dart';
+import 'package:new_app/widgets/navigator_demo.dart';
 import 'package:new_app/widgets/text_widget.dart';
 
 void main(List<String> args) {
@@ -20,11 +25,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Home(),
+      home: LoginPage(),
     );
   }
 }
 
+// 基础组件
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -53,7 +59,7 @@ class _CountPageState extends State<CountPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
         // lesson_01
         Text('$counter'),
@@ -71,6 +77,14 @@ class _CountPageState extends State<CountPage> {
         const ButtonDemo(),
         // lesson_04
         const ImageIconDemo(),
+        // lesson_05
+        const CheckSwitchDome(),
+        // lesson_06
+        const LinearProgressDemo(),
+        // lesson_07
+        const ClickDemo(),
+        // lesson_08
+        const LoginFormDemo(),
       ],
     );
   }

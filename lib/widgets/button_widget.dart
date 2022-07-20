@@ -1,7 +1,7 @@
 /*
  * @Author: Bryce
  * @Date: 2022-07-19 16:47:20
- * @LastEditTime: 2022-07-20 08:18:29
+ * @LastEditTime: 2022-07-20 08:48:42
  * @LastEditors: Bryce
  * @Description: 按钮widget
  */
@@ -23,7 +23,7 @@ class ButtonDemo extends StatelessWidget {
         TextButton(onPressed: () {}, child: const Text('Text Btn')),
         TextButton.icon(
           onPressed: () {},
-          icon: const Icon(Icons.sailing),
+          icon: const Icon(Icons.flag),
           label: const Text('Text Icon Btn'),
         ),
         OutlinedButton(onPressed: () {}, child: const Text('OutLined Btn')),
