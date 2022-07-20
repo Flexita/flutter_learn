@@ -1,7 +1,7 @@
 /*
  * @Author: Bryce
  * @Date: 2022-07-20 17:27:37
- * @LastEditTime: 2022-07-20 17:35:09
+ * @LastEditTime: 2022-07-20 17:49:22
  * @LastEditors: Bryce
  * @Description: （登录页面）——路由练习
  */
@@ -22,9 +22,17 @@ class LoginPage extends StatelessWidget {
         child: ElevatedButton(
           onPressed: (() {
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) {
-                return MenuPage();
-              }),
+              MaterialPageRoute(
+                builder: (context) {
+                  return MenuPage();
+                },
+                settings: RouteSettings(
+                  name: 'menu',
+                  arguments: '',
+                ),
+                maintainState: false,
+                fullscreenDialog: false,
+              ),
             );
           }),
           child: Text('登录'),
