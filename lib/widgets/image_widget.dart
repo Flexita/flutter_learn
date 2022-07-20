@@ -1,7 +1,7 @@
 /*
  * @Author: Bryce
  * @Date: 2022-07-19 17:08:47
- * @LastEditTime: 2022-07-19 17:20:32
+ * @LastEditTime: 2022-07-20 08:19:02
  * @LastEditors: Bryce
  * @Description: image_icon_widget
  */
@@ -14,8 +14,8 @@ class ImageIconDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Icon(Icons.shopping_bag, color: Colors.cyan),
-        IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart)),
+        const Icon(Icons.shopping_bag, color: Colors.cyan),
+        IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
         Image.network(
           'https://tupian.qqw21.com/article/UploadPic/2012-9/2012928918625.jpg',
           fit: BoxFit.fitWidth,
