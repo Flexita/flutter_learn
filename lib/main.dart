@@ -1,7 +1,7 @@
 /*
  * @Author: Bryce
  * @Date: 2022-07-19 15:30:06
- * @LastEditTime: 2022-07-20 17:30:46
+ * @LastEditTime: 2022-07-21 11:32:45
  * @LastEditors: Bryce
  * @Description: 程序入口
  */
@@ -24,8 +24,27 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: LoginPage(),
+    return MaterialApp(
+      // home: LoginPage(),
+      routes: <String, WidgetBuilder>{
+        '/': (context) => const LoginPage(),
+        // 'menu': (context) => const MenuPage(),
+      },
+
+      // 路由拦截
+      onGenerateRoute: (RouteSettings settings) {
+        switch (settings.name) {
+          case 'menu':
+            return MaterialPageRoute(
+              builder: (context) {
+                return const MenuPage();
+              },
+              settings: settings,
+            );
+          default:
+            break;
+        }
+      },
     );
   }
 }
