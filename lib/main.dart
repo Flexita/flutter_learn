@@ -1,7 +1,7 @@
 /*
  * @Author: Bryce
  * @Date: 2022-07-19 15:30:06
- * @LastEditTime: 2022-07-21 11:32:45
+ * @LastEditTime: 2022-07-21 15:45:40
  * @LastEditors: Bryce
  * @Description: 程序入口
  */
@@ -11,6 +11,7 @@ import 'package:new_app/widgets/check_widget.dart';
 import 'package:new_app/widgets/click_demo.dart';
 import 'package:new_app/widgets/form_filed_widget.dart';
 import 'package:new_app/widgets/image_widget.dart';
+import 'package:new_app/widgets/layout_demo.dart';
 import 'package:new_app/widgets/linear_progress_widget.dart';
 import 'package:new_app/widgets/navigator_demo.dart';
 import 'package:new_app/widgets/text_widget.dart';
@@ -28,9 +29,9 @@ class MyApp extends StatelessWidget {
       // home: LoginPage(),
       routes: <String, WidgetBuilder>{
         '/': (context) => const LoginPage(),
-        // 'menu': (context) => const MenuPage(),
+        'layout': (context) => const LayoutDemo(),
       },
-
+      initialRoute: 'layout',
       // 路由拦截
       onGenerateRoute: (RouteSettings settings) {
         switch (settings.name) {
