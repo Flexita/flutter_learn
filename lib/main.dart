@@ -1,7 +1,7 @@
 /*
  * @Author: Bryce
  * @Date: 2022-07-19 15:30:06
- * @LastEditTime: 2022-07-21 15:45:40
+ * @LastEditTime: 2022-07-22 17:17:05
  * @LastEditors: Bryce
  * @Description: 程序入口
  */
@@ -14,7 +14,9 @@ import 'package:new_app/widgets/image_widget.dart';
 import 'package:new_app/widgets/layout_demo.dart';
 import 'package:new_app/widgets/linear_progress_widget.dart';
 import 'package:new_app/widgets/navigator_demo.dart';
+import 'package:new_app/widgets/page_demo.dart';
 import 'package:new_app/widgets/text_widget.dart';
+import 'package:new_app/widgets/bottom_navigator.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -26,12 +28,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.pink,
+      ),
       // home: LoginPage(),
       routes: <String, WidgetBuilder>{
         '/': (context) => const LoginPage(),
         'layout': (context) => const LayoutDemo(),
+        'pageDemo': (context) => const PageDemo(),
+        'navigator': (context) => const BottomNavigatorViwe()
       },
-      initialRoute: 'layout',
+      initialRoute: 'navigator',
       // 路由拦截
       onGenerateRoute: (RouteSettings settings) {
         switch (settings.name) {

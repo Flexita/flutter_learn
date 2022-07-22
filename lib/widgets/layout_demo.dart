@@ -1,7 +1,7 @@
 /*
  * @Author: Bryce
  * @Date: 2022-07-21 15:43:32
- * @LastEditTime: 2022-07-21 17:20:48
+ * @LastEditTime: 2022-07-22 11:09:47
  * @LastEditors: Bryce
  * @Description: 布局Demo
  */
@@ -19,7 +19,7 @@ class LayoutDemo extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
-          color: Colors.grey,
+          // color: Colors.grey,
           // child: Column(
           //   children: [
           //     Container(
@@ -199,6 +199,82 @@ class AlignDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    // Align————————————————————————————————————————————————————————————————————
+    // return Container(
+    //   width: 200,
+    //   height: 200,
+    //   color: Colors.yellowAccent,
+    //   child: Align(
+    //     alignment: Alignment(0, 0),
+    //     child: FlutterLogo(
+    //       size: 60,
+    //     ),
+    //   ),
+    // );
+    // ConstrainedBox———————————————————————————————————————————————————————————
+    // return ConstrainedBox(
+    //   constraints: BoxConstraints(
+    //     // minWidth: 200,
+    //     maxWidth: 240,
+    //     maxHeight: 500,
+    //     // minHeight: 200,
+    //   ),
+    //   child: Container(
+    //     width: 280,
+    //     height: 500,
+    //     color: Colors.pink,
+    //   ),
+    // );
+    // SizedBox—————————————————————————————————————————————————————————————————
+    // return SizedBox(
+    //   width: 200,
+    //   height: 200,
+    //   child: Container(
+    //     color: Colors.yellow,
+    //   ),
+    // );
+    // Decoration———————————————————————————————————————————————————————————————
+    return Container(
+      width: double.infinity,
+      margin: const EdgeInsets.all(20),
+      child: const DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.red,
+              Colors.orange,
+              Colors.yellow,
+              Colors.green,
+              Colors.cyan,
+              Colors.blue,
+              Colors.purple
+            ],
+            begin: Alignment(1, -1),
+            end: Alignment(-1, 1),
+          ),
+          // color: Colors.red,
+          // 圆角
+          borderRadius: BorderRadius.all(Radius.circular(6)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black38,
+              offset: Offset(3.0, 3.0),
+              blurRadius: 5.0,
+            ),
+          ],
+        ),
+        child: Padding(
+          padding: EdgeInsets.only(top: 15, right: 80, bottom: 15, left: 80),
+          child: Text(
+            '庆国公',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ),
+      transform: Matrix4.rotationZ(.2),
+    );
   }
 }
