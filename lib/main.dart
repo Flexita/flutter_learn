@@ -1,25 +1,43 @@
 /*
  * @Author: Bryce
  * @Date: 2022-07-19 15:30:06
- * @LastEditTime: 2022-07-22 17:17:05
+ * @LastEditTime: 2022-07-26 09:04:17
  * @LastEditors: Bryce
  * @Description: 程序入口
  */
+
 import 'package:flutter/material.dart';
+import 'package:new_app/provider/CountProcider.dart';
+import 'package:new_app/widgets/alert_dialog_demo.dart';
 import 'package:new_app/widgets/button_widget.dart';
+import 'package:new_app/widgets/card_demo.dart';
 import 'package:new_app/widgets/check_widget.dart';
 import 'package:new_app/widgets/click_demo.dart';
+import 'package:new_app/widgets/dio_demo.dart';
 import 'package:new_app/widgets/form_filed_widget.dart';
+import 'package:new_app/widgets/grid_view_demo.dart';
 import 'package:new_app/widgets/image_widget.dart';
 import 'package:new_app/widgets/layout_demo.dart';
 import 'package:new_app/widgets/linear_progress_widget.dart';
+import 'package:new_app/widgets/list_view_demo.dart';
 import 'package:new_app/widgets/navigator_demo.dart';
 import 'package:new_app/widgets/page_demo.dart';
+import 'package:new_app/widgets/performance.dart';
+import 'package:new_app/widgets/provider_demo.dart';
+import 'package:new_app/widgets/table_demo.dart';
 import 'package:new_app/widgets/text_widget.dart';
 import 'package:new_app/widgets/bottom_navigator.dart';
+import 'package:provider/provider.dart';
 
 void main(List<String> args) {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => CounteProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -36,9 +54,17 @@ class MyApp extends StatelessWidget {
         '/': (context) => const LoginPage(),
         'layout': (context) => const LayoutDemo(),
         'pageDemo': (context) => const PageDemo(),
-        'navigator': (context) => const BottomNavigatorViwe()
+        'navigator': (context) => const BottomNavigatorViwe(),
+        'list': (context) => const ListViewDemo(),
+        'grid': (context) => const GridViewDemo(),
+        'dialog': (context) => const AlertDialogDemo(),
+        'table': (context) => const TableDemo(),
+        'card': (context) => const CardDemo(),
+        'perf': (context) => const PerformanceDemo(),
+        'provider': (context) => const ProviderDemo(),
+        'dio': (context) => const DioDemo(),
       },
-      initialRoute: 'navigator',
+      initialRoute: 'dio',
       // 路由拦截
       onGenerateRoute: (RouteSettings settings) {
         switch (settings.name) {
